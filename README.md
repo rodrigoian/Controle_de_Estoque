@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 📦 Controle de Estoque em Java
 
 Este é um sistema simples de **controle de estoque** feito em Java, com funcionalidades básicas de cadastro, listagem, busca, remoção e atualização de produtos.
@@ -34,3 +35,6 @@ Cada produto possui:
 
 
   
+=======
+# Controle_de_Estoque
+>>>>>>> 0ed4ec6c925f48cc9067d1aea08c4786f692eb9c
