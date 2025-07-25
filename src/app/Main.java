@@ -2,13 +2,14 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import Produto.produto;
+
+import Produto.Produto;
 
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        List<produto> produtos = new ArrayList<>();
+        List<Produto> Produtos = new ArrayList<>();
 
         do {
             System.out.println("--CONTROLE DE ESTOQUE--");
@@ -37,31 +38,31 @@ public class Main {
                         System.out.println("--QUANTIDADE: ");
                         int quantidade = sc.nextInt();
                         sc.nextLine();
-                        produto prod = new produto(nome, id, quantidade);
-                        produtos.add(prod);
+                        Produto prod = new Produto(nome, id, quantidade);
+                        Produtos.add(prod);
                     }
                     break;
                 case 2:
                     System.out.println("--PRODUTOS CADASTRADOS--");
-                    System.out.println(produtos);
+                    System.out.println(Produtos);
                     break;
 
                 case 3:
-                    System.out.println(produtos);
+                    System.out.println(Produtos);
                     System.out.println("--ESCOLHA UM ITEM POR ID PARA REMOVER: ");
                     int idParaRemover = sc.nextInt();
-                    produtos.removeIf(p -> p.getId() == idParaRemover);
+                    Produtos.removeIf(p -> p.getId() == idParaRemover);
                     System.out.println("--ESTOQUE ATUALIZADO--");
-                    System.out.println(produtos);
+                    System.out.println(Produtos);
                     break;
 
 
                 case 4:
-                    produto produtoEncontrado = null;
+                    Produto produtoEncontrado = null;
                     System.out.println("--ESCREVA O ID DO PRODUTO QUE VOCÊ QUER BUSCAR: ");
                     int idBuscar = sc.nextInt();
 
-                    for (produto p : produtos)
+                    for (Produto p : Produtos)
                         if (p.getId() == idBuscar) {
                             produtoEncontrado = p;
                         }
@@ -74,12 +75,12 @@ public class Main {
                     break;
 
                 case 5:
-                    produto produtoAlterar = null;
+                    Produto produtoAlterar = null;
                     System.out.println("--INFORME O ID DO PRODUTO QUE VOCÊ QUER ALTERAR A QUANTIDADE: ");
                     int idAlterar = sc.nextInt();
                     sc.nextLine();
 
-                    for (produto p : produtos)
+                    for (Produto p : Produtos)
                         if (p.getId() == idAlterar) {
                             produtoAlterar = p;
                         }
@@ -92,6 +93,7 @@ public class Main {
                             int adicionarEstoque = sc.nextInt();
                             produtoAlterar.aumentarEstoque(adicionarEstoque);
                             System.out.println("--LISTA ATUALIZADA--");
+
                         } else if (operacaoEstoque == '-') {
                             System.out.println("--INFORME QUANTOS ITENS VOCÊ QUER TIRAR: ");
                             int diminuirEstoque = sc.nextInt();
@@ -114,7 +116,6 @@ public class Main {
 
                 default:
                     System.out.println("--OPÇÃO INVÁLIDA--");
-                    System.out.println("teste");
             }
         } while (true);
     }

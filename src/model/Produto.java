@@ -1,11 +1,11 @@
 package Produto;
 
-public class produto {
+public class Produto {
     private String nome;
     private Integer id;
     private Integer quantidade;
 
-    public produto(String nome, Integer id, Integer quantidade) {
+    public Produto(String nome, Integer id, Integer quantidade) {
         this.nome = nome;
         this.id = id;
         this.quantidade = quantidade;
