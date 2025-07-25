@@ -38,10 +38,10 @@
 
 -Adicionar mensagens de erro mais amigáveis para o usuário
 
-Implementar um sistema de ordenação por nome ou ID ao exibir os produtos
+-Implementar um sistema de ordenação por nome ou ID ao exibir os produtos
 
-Permitir retornar ao menu principal após cada ação
+-Permitir retornar ao menu principal após cada ação
 
-Tratar erros de digitação e entrada inválida sem travar o programa
+-Tratar erros de digitação e entrada inválida sem travar o programa
 
-Criar uma estrutura simples de armazenamento temporário durante a execução
+-Criar uma estrutura simples de armazenamento temporário durante a execução
