@@ -28,15 +28,15 @@
 
 🚀 Futuras melhorias:
 
--Impedir que dois produtos tenham o mesmo ID
+-Impedir que dois produtos tenham o mesmo ID ✅
 
 -Validar a entrada para evitar nomes vazios ou quantidades negativas
 
--Separar o código em métodos para deixar o main mais limpo e organizado
+-Separar o código em métodos para deixar o main mais limpo e organizado ✅
 
--Melhorar o visual da listagem de produtos no console
+-Melhorar o visual da listagem de produtos no console ✅
 
--Adicionar mensagens de erro mais amigáveis para o usuário
+-Adicionar mensagens de erro mais amigáveis para o usuário ✅
 
 -Implementar um sistema de ordenação por nome ou ID ao exibir os produtos
 
