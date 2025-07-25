@@ -1,38 +1,42 @@
 📦 Controle de Estoque em Java:
-Projeto simples de controle de estoque implementado em Java, utilizando conceitos básicos de Programação Orientada a Objetos (POO). O sistema permite o gerenciamento de uma lista de produtos em memória, possibilitando operações como cadastro, exclusão, busca e atualização da quantidade de itens.
+
+-Projeto simples de controle de estoque implementado em Java, utilizando conceitos básicos de Programação Orientada a Objetos (POO). O sistema permite o gerenciamento de uma lista de produtos em memória, possibilitando operações como cadastro, exclusão, busca e atualização da quantidade de itens.
 
 ---
 
 🔧 Funcionalidades:
-Adicionar produtos com nome, ID e quantidade
 
-Listar todos os produtos cadastrados
+-Adicionar produtos com nome, ID e quantidade
 
-Remover produtos pelo ID
+-Listar todos os produtos cadastrados
 
-Buscar produto específico pelo ID
+-Remover produtos pelo ID
 
-Aumentar ou diminuir a quantidade de um produto existente
+-Buscar produto específico pelo ID
+
+-Aumentar ou diminuir a quantidade de um produto existente
 
 ---
 
 📁 Estrutura:
-produto.java: Classe que representa o produto com atributos (nome, ID e quantidade) e métodos para manipular o estoque
 
-Main.java: Classe responsável pelo gerenciamento da lista de produtos, onde as funcionalidades principais são aplicadas
+-produto.java: Classe que representa o produto com atributos (nome, ID e quantidade) e métodos para manipular o estoque
+
+-Main.java: Classe responsável pelo gerenciamento da lista de produtos, onde as funcionalidades principais são aplicadas
 
 ---
 
 🚀 Futuras melhorias:
-Impedir que dois produtos tenham o mesmo ID
 
-Validar a entrada para evitar nomes vazios ou quantidades negativas
+-Impedir que dois produtos tenham o mesmo ID
 
-Separar o código em métodos para deixar o main mais limpo e organizado
+-Validar a entrada para evitar nomes vazios ou quantidades negativas
 
-Melhorar o visual da listagem de produtos no console
+-Separar o código em métodos para deixar o main mais limpo e organizado
 
-Adicionar mensagens de erro mais amigáveis para o usuário
+-Melhorar o visual da listagem de produtos no console
+
+-Adicionar mensagens de erro mais amigáveis para o usuário
 
 Implementar um sistema de ordenação por nome ou ID ao exibir os produtos
 
