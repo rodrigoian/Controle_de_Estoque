@@ -1,7 +1,9 @@
-📦 Controle de Estoque em Java
+📦 Controle de Estoque em Java:
 Projeto simples de controle de estoque implementado em Java, utilizando conceitos básicos de Programação Orientada a Objetos (POO). O sistema permite o gerenciamento de uma lista de produtos em memória, possibilitando operações como cadastro, exclusão, busca e atualização da quantidade de itens.
 
-🔧 Funcionalidades
+---
+
+🔧 Funcionalidades:
 Adicionar produtos com nome, ID e quantidade
 
 Listar todos os produtos cadastrados
@@ -12,12 +14,16 @@ Buscar produto específico pelo ID
 
 Aumentar ou diminuir a quantidade de um produto existente
 
-📁 Estrutura
+---
+
+📁 Estrutura:
 produto.java: Classe que representa o produto com atributos (nome, ID e quantidade) e métodos para manipular o estoque
 
 Main.java: Classe responsável pelo gerenciamento da lista de produtos, onde as funcionalidades principais são aplicadas
 
-🚀 Futuras melhorias
+---
+
+🚀 Futuras melhorias:
 Impedir que dois produtos tenham o mesmo ID
 
 Validar a entrada para evitar nomes vazios ou quantidades negativas
