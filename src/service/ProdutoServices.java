@@ -53,17 +53,16 @@ public class ProdutoServices {
         System.out.println("--ESCOLHA UM ITEM POR ID PARA REMOVER: ");
         int idRemove = sc.nextInt();
 
-
         boolean idRemoveEncontrado = false;
         for (int i = 0; i < produtos.size(); i++) {
             if (produtos.get(i).getId() == idRemove){
                 idRemoveEncontrado = true;
 
-                System.out.println("--DESEJA MESMO REMOVER ESSE ITEM (S/N)? " + produtos);
+                System.out.println("--DESEJA MESMO REMOVER ESSE ITEM (S/N)? ");
                 char escolha = sc.next().toLowerCase().charAt(0);
 
                 if (escolha == 's') {
-                produtos.remove(idRemove);
+                produtos.remove(i);
                 System.out.println("--REMOVENDO PRODUTO--");
                 }
                 else {
