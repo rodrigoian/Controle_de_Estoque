@@ -2,7 +2,7 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import Produto.produto;
+import model.produto;
 
 
 public class Main {
