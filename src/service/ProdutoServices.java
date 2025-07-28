@@ -1,7 +1,6 @@
 package service;
 import model.Produto;
 
-import java.sql.SQLOutput;
 import java.util.List;
 import java.util.Scanner;
 

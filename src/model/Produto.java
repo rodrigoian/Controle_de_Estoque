@@ -33,7 +33,12 @@ public class Produto {
     }
 
     public void diminuirEstoque(int numero) {
-        this.quantidade = quantidade - numero;
+        if (quantidade > 0) {
+            this.quantidade = quantidade - numero;
+        }
+        else {
+            System.out.println("--OPERAÇÃO NÃO REALIZADA POIS NÃO A HÁ PRODUTOS RESTANTES--");
+        }
     }
 
     public String toString() {
