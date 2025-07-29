@@ -29,21 +29,31 @@ public class Produto {
     }
 
     public void aumentarEstoque(int numero) {
-        this.quantidade = quantidade + numero;
+        if (numero <= 0) {
+            System.out.println("--DIGITE UM VALOR VÁLIDO");
+            return;
+        }
+        this.quantidade += numero;
+        System.out.println("--ESTOQUE AUMENTANDO COM SUCESSO--");
     }
 
     public void diminuirEstoque(int numero) {
-        if (quantidade > 0) {
-            this.quantidade = quantidade - numero;
+        if (numero <= 0) {
+            System.out.println("--DIGITE UM VALOR VÁLIDO--");
+            return;
+        }
+        if (quantidade >= numero ) {
+            this.quantidade -= numero;
+            System.out.println("--ESTOQUE RETIRADO COM SUCESSO--");
         }
         else {
-            System.out.println("--OPERAÇÃO NÃO REALIZADA POIS NÃO A HÁ PRODUTOS RESTANTES--");
+            System.out.println("--QUANTIDADE INSUFICIENTE NO ESTOQUE--");
         }
     }
 
     public String toString() {
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");//fez a formatação dentro do toString mesmo
         String dataFormatada = dataHora.format(formato);//converteu pra String para que eu consiga colocar no "String.format"
-        return String.format("Data %s | NOME: %s | ID: %d | QUANTIDADE: %d%n ",dataFormatada, getNome(), getId(), getQuantidade());
+        return String.format("Data %s | NOME: %s | ID: %d | QUANTIDADE: %d ",dataFormatada, getNome(), getId(), getQuantidade());
     }
 }

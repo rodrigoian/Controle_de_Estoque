@@ -1,51 +1,19 @@
 package service;
 import model.Produto;
-
 import java.util.List;
 import java.util.Scanner;
 
 public class ProdutoServices {
 
-    public static void adicionarProduto(List<Produto> produtos, Scanner sc) {
-        System.out.println("--QUANTOS PRODUTOS VOCÊ QUER ADICIONAR? ");
-        int n = sc.nextInt();
-        sc.nextLine();
-
-        for (int i = 0; i < n; i++) {
-            System.out.println("--NOME: ");
-            String nome = sc.nextLine().toUpperCase();
-            int id;
-
-            while (true) {
-                System.out.println("--ID: ");
-                id = sc.nextInt();
-
-                boolean checkId = false;
-                for (Produto p : produtos) {
-                    if (p.getId() == id) {
-                        checkId = true;
-                        break;
-                    }
-                }
-                if (checkId) {
-                    System.out.println("--ID JÁ EXISTENTE, DIGITE OUTRO--");
-                }
-                else {
-                    break;
-                }
+    public static boolean checkId(List<Produto> produtos, int id) {
+        for (Produto p : produtos) {
+            if (p.getId() == id) {
+                return true;
             }
-            System.out.println("--QUANTIDADE: ");
-            int quantidade = sc.nextInt();
-            sc.nextLine();
-            Produto prod = new Produto(nome, id, quantidade);
-            produtos.add(prod);
         }
+        return false;
     }
 
-    public static void listarProdutos (List<Produto> produtos) {
-        System.out.println("--PRODUTOS CADASTRADOS--");
-        System.out.println(produtos);
-    }
     public static void removerProduto (List<Produto> produtos, Scanner sc) {
         System.out.println(produtos);
 
