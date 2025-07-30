@@ -28,9 +28,9 @@ public class produtoMenu {
             switch (opcao) {
                 case 1 -> adicionarProdutoUi();
                 case 2 -> listarProdutos();
-                case 3 -> ProdutoServices.removerProduto(produtos, sc);
-                case 4 -> ProdutoServices.buscarProduto(produtos, sc);
-                case 5 -> ProdutoServices.alterarQuantidade(produtos, sc);
+                case 3 -> removerProduto();
+                case 4 -> buscarProduto();
+                case 5 -> alterarProdutos();
                 case 6 -> {
                     System.out.println("--PROGRAMA ENCERRANDO...");
                     System.exit(0);
@@ -56,7 +56,7 @@ public class produtoMenu {
                 id = sc.nextInt();
                 sc.nextLine();
 
-                boolean checkId = ProdutoServices.checkId(produtos, id);
+                boolean checkId = ProdutoServices.checkIdAdicionarProduto(produtos, id);
 
                 if (checkId) {
                     System.out.println("já existe, digite outro");
@@ -67,7 +67,6 @@ public class produtoMenu {
                 System.out.println("--QUANTIDADE: ");
                 int quantidade = sc.nextInt();
                 sc.nextLine();
-
 
                 Produto prod = new Produto(nome, id, quantidade);
                 produtos.add(prod);
@@ -80,6 +79,65 @@ public class produtoMenu {
         System.out.println("--PRODUTOS CADASTRADOS--");
         for (Produto p : produtos) {
             System.out.println(p);
+        }
+
+    }
+    public void removerProduto() {
+        System.out.println("--ESCOLHA UM ITEM POR ID PARA REMOVER: ");
+        int idRemove = sc.nextInt();
+
+        Produto removido = ProdutoServices.checkIdRemoverProduto(produtos, idRemove);
+
+        if (removido != null) {
+            System.out.println("Produto " + removido.getNome() +
+                    " foi removido com Sucesso.");
+        }
+        else {
+            System.out.println("Produto não encontrado.");
+            System.out.println();
+        }
+    }
+    public void buscarProduto() {
+        System.out.println("--ESCREVA O ID DO PRODUTO QUE VOCÊ QUER BUSCAR: ");
+        int idBuscar = sc.nextInt();
+
+        Produto produtoEncontrado = ProdutoServices.checkIdbuscarProduto(produtos, idBuscar);
+
+        if (produtoEncontrado != null) {
+            System.out.println("--SEU PRODUTO FOI ACHADO COM SUCESSO:\n " + produtoEncontrado);
+        } else {
+            System.out.println("--PRODUTO NÃO ENCONTRADO...");
+            System.out.println();
+        }
+    }
+    public void alterarProdutos() {
+        System.out.println("--INFORME O ID DO PRODUTO QUE VOCÊ QUER ALTERAR A QUANTIDADE: ");
+        int idAlterar = sc.nextInt();
+        sc.nextLine();
+
+        Produto produtoAlterar = ProdutoServices.checkIdAlterarQuantidade(produtos,idAlterar);
+
+        if (produtoAlterar != null) {
+            System.out.println("--INFORME A OPERAÇÃO QUE VOCÊ DESEJA (+/-): ");
+            char operacaoEstoque = sc.nextLine().charAt(0);
+
+            if (operacaoEstoque == '+') {
+                System.out.println("--INFORME QUANTOS ITENS VOCÊ QUER ADICIONAR: ");
+                int adicionarEstoque = sc.nextInt();
+                produtoAlterar.aumentarEstoque(adicionarEstoque);
+                System.out.println("--LISTA ATUALIZADA--");
+
+            } else if (operacaoEstoque == '-') {
+                System.out.println("--INFORME QUANTOS ITENS VOCÊ QUER TIRAR: ");
+                int diminuirEstoque = sc.nextInt();
+                produtoAlterar.diminuirEstoque(diminuirEstoque);
+                System.out.println("--LISTA ATUALIZADA--");
+            } else {
+                System.out.println("--ESSA OPERAÇÃO NÃO EXISTE--");
+            }
+        }
+        else {
+            System.out.println("--PRODUTO NÃO ENCONTRADO");
         }
     }
 }
